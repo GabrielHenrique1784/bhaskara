@@ -1,0 +1,15 @@
+body{
+    
+    margin-left: 30%;
+    margin-right: 30%;
+    align-items: center;
+    text-align: center;
+    background-image: url(a-fazenda-14.webp);
+    background-size: cover;
+}
+
+.Calculadora{
+    color: white;
+    background-color: black;
+    border-radius: 2%;
+}

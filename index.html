@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Calculadora de Equação Quadrática
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="Calculadora">
+    <h1>Calculadora de Equação Quadrática</h1>
+
+    <form id="quadratic-form">
+        <label for="a">Valor de A:</label>
+        <input type="number" id="a" required><br><br>
+
+        <label for="b">Valor de B:</label>
+        <input type="number" id="b" required><br><br>
+
+        <label for="c">Valor de C:</label>
+        <input type="number" id="c" required><br><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+</div>
+    <div id="result">
+    </div>
+
+    <script>
+        document.getElementById('quadratic-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var a = (document.getElementById('a').value);
+
+            var b = (document.getElementById('b').value);
+
+            var c = (document.getElementById('c').value);
+
+            var dados = b * b - 4 * a * c;
+
+            if (dados > 0) {
+                var x1 = (-b + Math.sqrt(dados)) / (2 * a);
+
+                var x2 = (-b - Math.sqrt(dados)) / (2 * a);
+
+                document.getElementById('result').innerText = 'X\' = ' + x1 + ', X\'\' = ' + x2;
+
+            } 
+            else if (dados === 0) {
+                var x = -b / (2 * a);
+                document.getElementById('result').innerText = 'X\' = X\'\' = ' + x;
+            }
+             else {
+                document.getElementById('result').innerText = 'A equação não possui raízes reais.';
+            }
+        });
+    </script>
+</body>
+
+</html>
